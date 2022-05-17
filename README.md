@@ -1,6 +1,6 @@
-## Bem-vindo ao HUB-WEB do Covid-19
+### Bem-vindo ao HUB-WEB do Covid-19
 
-#Aqui, pode consultar os dados, a nível nacional, do COVID-19 em Portugal Continetal. 
+Aqui, pode consultar os dados, a nível nacional, do COVID-19 em Portugal Continetal. 
 
 You can use the [editor on GitHub](https://github.com/Ratolinux/websig/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
