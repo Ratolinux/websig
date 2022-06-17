@@ -168,20 +168,11 @@
 		}
 
 		// create a Leaflet map in our division container with id of 'map'
-		var map = L.map('map', options);
-
-		// Leaflet providers base map URL
-		var basemap_source =
-			'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}'
-
-		// Leaflet providers attributes
-		var basemap_options = {
-			attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+		var map = L.map('map').setView([39.696927, -7.729808], 6);
+	
+	L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
 	maxZoom: 16}).addTo(map);
-		};
-
-		// request some basemap tiles and add to the map
-		var tiles = L.tileLayer(basemap_source, basemap_options).addTo(map);
 
 		casos.features.sort(function (a, b) {
 			return b.properties.Casos_23_1;
