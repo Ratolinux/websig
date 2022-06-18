@@ -111,33 +111,29 @@
 			return b.properties.capacity_mw - a.properties.capacity_mw;
 		});
 		
-		//Legenda
-		function getRadius(Casos_23_1) {
-		return  r > 100 ? 12 :
-        		r > 50 ? 9 :
-        		r > 20 ? 6 :
-        		r > 10 ? 4 :
-        		0;
-		}
-
-		 var legend = L.control({position: 'bottomright'});
-		 legend.onAdd = function (map) {
-
-		 var div = L.DomUtil.create('div', 'info legend');
-		 grades = [10, 40, 80, 100],
-		 labels = ['<strong>Nº de casos</strong>'],
-		 categories = ['<10','10-50','51-100', '>100'];
-
-		 for (var i = 0; i < grades.length; i++) {
-			var grade = grades[i];//*0.5;
-		 labels.push(
-		 '<i class="circlepadding" style="width: '+Math.max(8,(7-2.2*getRadius(grade)))+'px;"></i> <i style="background: #8080A0; width: '+getRadius(grade)*2+'px; height: '+getRadius(grade)*2+'px; border-radius: 50%; margin-top: '+Math.max(0,(9-getRadius(grade)))+'px;"></i><i class="circlepadding" style="width: '+Math.max(2,(25-2*getRadius(grade)))+'px;"></i> ' + categories[i]);
-		 }
-		 div.innerHTML = labels.join('<br>');
-		 return div;
-		 };
-		 legend.addTo(map);
-
+		//create circle size legend
+		var sizelegend = L.control({
+		    position: 'bottomleft'
+		});
+		//generate legend contents
+		sizelegend.onAdd = function (map) {
+			//set up legend grades and labels
+		    var div = L.DomUtil.create('div', 'info legend'),
+			grades = [10, 25, 50, 100, 200, 400],
+			labels = ['<strong>Size</strong>'],
+			from, to;
+		    //iterate through grades and create a scaled circle and label for each
+		    for (var i = 0; i < grades.length; i++) {
+			from = grades[i];
+			to = grades[i + 1];
+			labels.push(
+			    '<i class="circlepadding" style="width: '+Math.max(0,(19-1.8*getRadius(from)))+'px;"></i> <i style="background: #8080A0; width: '+getRadius(from)*2+'px; height: '+getRadius(from)*2+'px; border-radius: 50%; margin-top: '+Math.max(0,(9-getRadius(from)))+'px;"></i> ' + from);
+		    }
+		    div.innerHTML = labels.join('<br>');
+		    return div;
+		};
+		sizelegend.addTo(map);
+		
 		// var popup = '<h3>' + hotspots[i].name + '</h3>'
 		// Load power plants
 		L.geoJson(casos, {
