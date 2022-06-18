@@ -104,15 +104,19 @@
 		sizelegend.onAdd = function (map) {
 			//set up legend grades and labels
 		    var div = L.DomUtil.create('div', 'info legend'),
-			grades = [10, 25, 50, 100, 200, 400],
-			labels = ['<strong>Size</strong>'],
+			grades = [10, 25, 50, 100],
+			labels = ['<strong>Nº de casos</strong>'],
 			from, to;
 		    //iterate through grades and create a scaled circle and label for each
 		    for (var i = 0; i < grades.length; i++) {
 			from = grades[i];
 			to = grades[i + 1];
 			labels.push(
-			    '<i class="circlepadding" style="width: '+Math.max(0,(19-1.8*getRadius(from)))+'px;"></i> <i style="background: #8080A0; width: '+getRadius(from)*2+'px; height: '+getRadius(from)*2+'px; border-radius: 50%; margin-top: '+Math.max(0,(9-getRadius(from)))+'px;"></i> ' + from);
+			'<i class="circlepadding" style="width: '+Math.max(0,(19-1.8*getRadius(from)))
+			+'px;"></i> <i style="background: #8080A0; width: '+getRadius(from)*2
+			+'px; height: '+getRadius(from)*2
+			+'px; border-radius: 50%; margin-top: '+Math.max(0,(9-getRadius(from)))+'px;"></i> ' 
+			+ from);
 		    }
 		    div.innerHTML = labels.join('<br>');
 		    return div;
