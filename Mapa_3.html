@@ -32,7 +32,7 @@
 	   .legend {
 		line-height: 19px;
 		padding:7px;
-		color: #555;
+		color: #3f5a0c;
 	       }
 
 	   .legend i {
@@ -58,7 +58,7 @@
 	 }
 	.legend .circlepadding {
 	border-radius: 50%;
-	background: rgba(63, 90, 12, 0.50);
+	background: rgba(63, 90, 12, 0.65);
 	}
 	</style>	
 </head>
@@ -124,9 +124,9 @@
 		 legend.onAdd = function (map) {
 
 		 var div = L.DomUtil.create('div', 'info legend');
-		 grades = [15, 40, 80, 100],
+		 grades = [10, 40, 80, 100],
 		 labels = ['<strong>Nº de casos</strong>'],
-		 categories = ['N/A','<50','51-100', '>100'];
+		 categories = ['<10','10-50','51-100', '>100'];
 
 		 for (var i = 0; i < grades.length; i++) {
 			var grade = grades[i];//*0.5;
