@@ -42,7 +42,9 @@
 
 	// control that shows state info on hover
 	var info = L.control();
-
+	
+	L.control.scale({position:'bottomright', metric: false}).addTo(map);
+	
 	info.onAdd = function (map) {
 		this._div = L.DomUtil.create('div', 'info');
 		this.update();
