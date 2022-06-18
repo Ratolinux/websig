@@ -41,6 +41,8 @@
 
 		// create a Leaflet map in our division container with id of 'map'
 		var map = L.map('map', options);
+		
+		L.control.scale({position:'bottomright', metric: false}).addTo(map);
 
 		// Leaflet providers base map URL
 		var basemap_source =
