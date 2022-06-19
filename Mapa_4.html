@@ -95,7 +95,9 @@
 		casos.features.sort(function (a, b) {
 			return b.properties.capacity_mw - a.properties.capacity_mw;
 		});
-
+		
+		map.attributionControl.addAttribution('Número de casos: &copy; <a href="https://covid19.min-saude.pt/">Direção-Geral da Saúde</a>');
+		
 		//create circle size legend
 		var sizelegend = L.control({
 		    position: 'bottomright'
