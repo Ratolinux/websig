@@ -110,7 +110,7 @@
 		    //iterate through grades and create a scaled circle and label for each
 		    for (var i = 0; i < grades.length; i++) {
 			from = grades[i];
-			to = grades[i];
+			to = grades[i + 2];
 			labels.push(
 			'<i class="circlepadding" style="width: '+Math.max(0,(19-1.8*getRadius(from)))
 			+'px;"></i> <i style="background: #3f5a0c; width: '+getRadius(from)*2
