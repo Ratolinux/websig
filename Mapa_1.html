@@ -51,7 +51,7 @@
 	
 	var info = L.control();
 	
-	L.control.scale({position:'bottomleft', metric: false}).addTo(map);
+	L.control.scale({position:'bottomleft', metric: true}).addTo(map);
 	
 	info.onAdd = function (map) {
 		this._div = L.DomUtil.create('div', 'info');
