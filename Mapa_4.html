@@ -103,14 +103,14 @@
 		//generate legend contents
 		sizelegend.onAdd = function (map) {
 			//set up legend grades and labels
-		    var div = L.DomUtil.create('div', 'info legend'),
+		    var div = L.DomUtil.create(),
 			grades = [100, 300, 600, 900],
 			labels = ['<strong>Nº de casos</strong>'],
 			from, to;
 		    //iterate through grades and create a scaled circle and label for each
 		    for (var i = 0; i < grades.length; i++) {
 			from = grades[i];
-			to = grades[i + 2];
+			to = grades[i + 1];
 			labels.push(
 			'<i class="circlepadding" style="width: '+Math.max(0,(19-1.8*getRadius(from)))
 			+'px;"></i> <i style="background: #3f5a0c; width: '+getRadius(from)*2
