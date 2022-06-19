@@ -104,7 +104,7 @@
 		sizelegend.onAdd = function (map) {
 			//set up legend grades and labels
 		    var div = L.DomUtil.create('div', 'info legend'),
-			grades = [>100, 100-200, 200-300, >300],
+			grades = [100, 100-200, 200-300, 300],
 			labels = ['<strong>Nº de casos</strong>'],
 			from, to;
 		    //iterate through grades and create a scaled circle and label for each
