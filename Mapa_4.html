@@ -127,7 +127,7 @@
 		// Load power plants
 		L.geoJson(casos, {
 			filter: function (feature) {
-				if (feature.properties.Casos_15_1) { // This test to see if the key exits
+				if (feature.properties.Casos_14_1) { // This test to see if the key exits
 					return feature;
 				}
 			},
@@ -137,13 +137,13 @@
 					weight: 1,
 					fillColor: '#3f5a0c',
 					fillOpacity: 0.3,
-					radius: getRadius(feature.properties.Casos_15_1)
+					radius: getRadius(feature.properties.Casos_14_1)
 				});
 			},
 			onEachFeature: function (feature, layer) {
 				var popup =
 					'<p><b>Concelho: ' + layer.feature.properties.Concelho + '</b></p>' +
-					'<p>Casos: ' + layer.feature.properties.Casos_15_1 + ' </p>' 
+					'<p>Casos: ' + layer.feature.properties.Casos_14_1 + ' </p>' 
 					
 				layer.on('mouseover', function () {
 					layer.bindPopup(popup).openPopup();
