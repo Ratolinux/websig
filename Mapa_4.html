@@ -21,30 +21,30 @@
 		.info h4 {
 	    margin: 0 0 5px;
 	    color: #777;
-	}
-	.legend {
-	    text-align: left;
-	    line-height: 18px;
-	    color: #555;
-	}
-	.legend i {
-	    width: 20px;
-	    height: 20px;
-	    float: left;
-	    margin-right: 20px;
-	    opacity: 0.9;
-	}
-	.legend .colorcircle {
-	    border-radius: 50%;
-	    width: 20px;
-	    height: 20px;
-	    margin-top: 20px;
-	}
-	.legend .circlepadding {
-	    border-radius: 50%;
-	    margin-top: 0px;
-	    background: rgba(63, 90, 12, 0);
-	}
+		}
+		.legend {
+		    text-align: left;
+		    line-height: 18px;
+		    color: #555;
+		}
+		.legend i {
+		    width: 20px;
+		    height: 20px;
+		    float: left;
+		    margin-right: 20px;
+		    opacity: 0.9;
+		}
+		.legend .colorcircle {
+		    border-radius: 50%;
+		    width: 20px;
+		    height: 20px;
+		    margin-top: 20px;
+		}
+		.legend .circlepadding {
+		    border-radius: 50%;
+		    margin-top: 0px;
+		    background: rgba(63, 90, 12, 0);
+		}
 	</style>	
 </head>
 
@@ -103,12 +103,12 @@
 		//generate legend contents
 		sizelegend.onAdd = function (map) {
 			//set up legend grades and labels
-		    var div = L.DomUtil.create(),
+		    var div = L.DomUtil.create('div', 'info legend'),
 			grades = [100, 300, 600, 900],
 			labels = ['<strong>Nº de casos</strong>'],
 			from, to;
 		    //iterate through grades and create a scaled circle and label for each
-		    for (var i = 0; i < grades.length; i++) {
+		    for (var i = 0; i < grades.length; i) {
 			from = grades[i];
 			to = grades[i + 1];
 			labels.push(
