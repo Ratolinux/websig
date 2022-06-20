@@ -88,24 +88,6 @@
 			subdomains: 'abcd',
 			maxZoom: 16
 		};
-		
-		var lat, lng;
-
-		map.addEventListener('mousemove', function(ev) {
-		   lat = ev.latlng.lat;
-		   lng = ev.latlng.lng;
-		});
-
-		document.getElementById("transitmap").addEventListener("contextmenu", function (event) {
-		    // Prevent the browser's context menu from appearing
-		    event.preventDefault();
-
-		    // Add marker
-		    // L.marker([lat, lng], ....).addTo(map);
-		    alert(lat + ' - ' + lng);
-
-		    return false; // To disable default popup.
-		});
 
 		// request some basemap tiles and add to the map
 		var tiles = L.tileLayer(basemap_source, basemap_options).addTo(map);
