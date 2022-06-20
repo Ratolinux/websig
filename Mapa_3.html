@@ -125,6 +125,11 @@
 		};
 		sizelegend.addTo(map);
 		
+		marker.on('click', function(ev){
+  		var latlng = map.mouseEventToLatLng(ev.originalEvent);
+  		console.log(latlng.lat + ', ' + latlng.lng);
+		});
+		
 		// var popup = '<h3>' + hotspots[i].name + '</h3>'
 		// Load power plants
 		L.geoJson(casos, {
