@@ -66,13 +66,13 @@
 		map.attributionControl.addAttribution('Número de casos: &copy; <a href="https://covid19.min-saude.pt/">Direção-Geral da Saúde</a>');
 		
 		//create circle size legend
-		var legend = L.control({position: "bottomright"});
-		legend.onAdd = function(map) {
+		var north = L.control({position: "bottomright"});
+		north.onAdd = function(map) {
     		var div = L.DomUtil.create();
    	 	div.innerHTML = '<img src= "Legenda.png"; style = "width: 8%;heigth: 8%">';
    		 return div;
 		}
-		legend.addTo(map);
+		north.addTo(map);
 		
 		// var popup = '<h3>' + hotspots[i].name + '</h3>'
 		// Load power plants
