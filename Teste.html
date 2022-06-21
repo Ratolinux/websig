@@ -67,11 +67,22 @@
 		
 		//create circle size legend
 		var legend = L.control({position: 'bottomright'});
+
 		legend.onAdd = function (map) {
-		var div = L.DomUtil.create();
-		div.innerHTML = '<img src= "./Legenda.png"; style= "height: 50% width: 50%">';
-		return div;
-		}
+
+		    var div = L.DomUtil.create('div', 'info legend'),
+			grades = ["Car", "ball"],
+			labels = ["Legenda.png"];
+
+		    // loop through our density intervals and generate a label with a colored square for each interval
+		    for (var i = 0; i < grades.length; i++) {
+			div.innerHTML +=
+			    grades[i] + (" <img src="+ labels[i] +" height='50' width='50'>") +'<br>';
+		    }
+
+		    return div;
+		};
+
 		legend.addTo(map);
 		
 		// var popup = '<h3>' + hotspots[i].name + '</h3>'
