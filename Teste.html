@@ -66,10 +66,10 @@
 		map.attributionControl.addAttribution('Número de casos: &copy; <a href="https://covid19.min-saude.pt/">Direção-Geral da Saúde</a>');
 		
 		//create circle size legend
-		var legend = L.control({position: "topright"});
+		var legend = L.control({position: "bottomright"});
 		legend.onAdd = function(map) {
     		var div = L.DomUtil.create();
-   	 	div.innerHTML = '<img src="./Legenda.png"; style = "float: right; width: 8%;heigth: 8%">';
+   	 	div.innerHTML = '<img src= "Legenda.png"; style = "width: 8%;heigth: 8%">';
    		 return div;
 		}
 		legend.addTo(map);
