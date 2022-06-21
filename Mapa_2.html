@@ -39,6 +39,14 @@
 	L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
 	maxZoom: 16}).addTo(map);
+	
+	map.on('click', 
+					function(e){
+						var coord = e.latlng.toString().split(',');
+						var lat = coord[0].split('(');
+						var lng = coord[1].split(')');
+						console.log("You clicked the map at latitude: " + lat[1] + " and longitude:" + lng[0]);
+					});
 
 	var north = L.control({position: "topright"});
 	north.onAdd = function(map) {
