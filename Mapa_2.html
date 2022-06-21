@@ -40,7 +40,7 @@
 	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
 	maxZoom: 16}).addTo(map);
 	
-	var wmsLayer = L.tileLayer.wms('http://mapas.dgterritorio.pt/wms-inspire/caop/continente?service=WMS&REQUEST=GetCapabilities&VERSION=1.3.0', wmsOptions).addTo(map);
+	var wmsLayer = L.tileLayer.wms('http://ows.mundialis.de/services/service?', wmsOptions).addTo(map);
 
 	var north = L.control({position: "topright"});
 	north.onAdd = function(map) {
