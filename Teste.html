@@ -14,37 +14,6 @@
             height: 100%;
             margin: 0;
         }
-        #map {
-            width: 100%;
-            height: 100%;
-        }
-		.info h4 {
-	    margin: 0 0 5px;
-	    color: #777;
-	}
-	.legend {
-	    text-align: left;
-	    line-height: 18px;
-	    color: #555;
-	}
-	.legend i {
-	    width: 48px;
-	    height: 48px;
-	    float: left;
-	    margin-right: 8px;
-	    opacity: 0.9;
-	}
-	.legend .colorcircle {
-	    border-radius: 50%;
-	    width: 20px;
-	    height: 20px;
-	    margin-top: 20px;
-	}
-	.legend .circlepadding {
-	    border-radius: 50%;
-	    margin-top: 0px;
-	    background: rgba(63, 90, 12, 0);
-	}
 	</style>	
 </head>
 
@@ -54,8 +23,6 @@
 	</header>
 
 	<div id="map"></div>
-
-	
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
 	<script src="./Data/casos.geojson"></script>
@@ -99,32 +66,12 @@
 		map.attributionControl.addAttribution('Número de casos: &copy; <a href="https://covid19.min-saude.pt/">Direção-Geral da Saúde</a>');
 		
 		//create circle size legend
-		var sizelegend = L.control({
-		    position: 'bottomright'
-		});
-		//generate legend contents
-		sizelegend.onAdd = function (map) {
-			//set up legend grades and labels
-		    var div = L.DomUtil.create('div', 'info legend'),
-			grades = [ 100, 300, 600, 900],
-			labels = ['<strong>Nº de casos</strong>'],
-			from, to;
-		    //iterate through grades and create a scaled circle and label for each
-		    for (var i = 0; i < grades.length; i++) {
-			from = grades[i];
-			to = grades[i + 1];
-			labels.push(
-			'<i class="circlepadding" style="width: '+Math.max(0,(19-1.8*getRadius(from)))
-			+'px;"></i> <i style="background: #3f5a0c; width: '+getRadius(from)*2
-			+'px; height: '+getRadius(from)*2
-			+'px; border-radius: 50%; margin-top: '+Math.max(0,(9-getRadius(from)))+'px;"></i> ' 
-			+ from);
-		    }
-		    div.innerHTML = labels.join('<br>');
-		    return div;
-		};
-		sizelegend.addTo(map);
-		
+		var legend = L.control({position: "bottomright"});
+		legend.onAdd = function(map) {
+    		var div = L.DomUtil.create();
+   	 	div.innerHTML = '<img src="Legenda.png"; style = "float: right; width: 10%;heigth: 10%">';
+   		 return div;
+		}
 		// var popup = '<h3>' + hotspots[i].name + '</h3>'
 		// Load power plants
 		L.geoJson(casos, {
